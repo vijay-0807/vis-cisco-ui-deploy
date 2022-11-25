@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vis-app-ui
+  name: vis-app-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vis-app-ui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vis-app-ui
+    spec:
+      containers:
+      - image: vijay0807/vis-ui-webapp:appv1
+        name: vis-ui-webapp
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
